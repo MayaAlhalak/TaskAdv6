@@ -1,11 +1,12 @@
+import type { Allinfo } from "../../Date/Date"
 
 
 function CardArtical({
     part1 , defind , image1 , image2 , image3 , image4 , image5 , image6 , image7 , image8 , image9 ,defind2 ,defind3 , defind4 , defind5 , defind6
     , part2 , part3 , part4 , part5 , part6 , part7 ,part8 , part9 , part10 ,
     part11 , part12 , part13 , part14 , part15 , part16 , part17 ,part18 , part19 , part20 
-    , part21 , part23 , part24  ,part22,
-      ex1 , ex2 , ex3 , ex4}) {
+    , part21 , part23 , part24  ,
+      ex1 , ex2 , ex3 , ex4} : Allinfo) {
   return (
     <div>
       <p className="font-normal text-[16px] font-display text-[#667085] leading-6 dark:text-[#C0C5D0]">{part1}</p>

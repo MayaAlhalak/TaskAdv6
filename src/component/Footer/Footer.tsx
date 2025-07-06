@@ -28,7 +28,7 @@ function Footer({ darkmode }: FooterProps) {
         },
     ]
   return (
-    <section className={`${darkmode ? "dark" : ""} bg-white  dark:bg-[#090D1F] flex flex-col justify-center items-center gap-y-[30px] md:flex-row-reverse md:justify-end  pt-[30px] pb-[23px] md:pl-8 md:py-[30px] md:gap-3.5 lg:pl-28`}>
+    <section className={`${darkmode ? "dark" : ""} bg-white  dark:bg-[#090D1F] flex flex-col justify-center items-center gap-y-[30px] md:flex-row-reverse md:justify-end  pt-[30px] pb-[23px] md:pl-8 md:py-[30px] md:gap-3.5 lg:pl-28 mt-0`}>
       <ul className="flex flex-col justify-center items-center gap-y-3.5 md:flex-row md:gap-3.5">
         {
             links.map((item , index) => (

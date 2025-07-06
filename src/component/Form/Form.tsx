@@ -1,6 +1,10 @@
 
-
-function Form({title , text  , btn }) {
+interface DataForm {
+  title : string,
+  text : string,
+  btn : string,
+}
+function Form({title , text  , btn } : DataForm) {
   return (
     <>
     <div className="flex items-center justify-center flex-col px-8">
@@ -10,8 +14,8 @@ function Form({title , text  , btn }) {
     </div>
     <div className="flex items-center justify-center flex-col px-8">
         <form >
-            <input type="text" name="" id="" placeholder="Enter your email" className="border border-[#D0D5DD] rounded-lg py-3 pl-4 pr-3.5 w-[326px] mb-3" />
-            <button className="font-medium text-[16px] leading-6 text-white py-3 px-5 bg-[#7F56D9] rounded-lg mb-8 md:mb-2 md:ml-4">{btn}</button>
+            <input type="text" name="" id="" placeholder="Enter your email" className="border border-[#D0D5DD] rounded-lg py-3 pl-4 pr-3.5 w-[326px] mb-3 boxshadow2 dark:bg-white" />
+            <button className="font-medium text-[16px] leading-6 text-white py-3 px-5 bg-[#7F56D9] rounded-lg mb-8 md:mb-2 md:ml-4 boxshadow">{btn}</button>
         </form>
         <p className="text-sm font-normal  font-display leading-5 text-[#667085]  dark:text-[#C0C5D0]">We care about your data in our <span className="underline">privacy policy</span></p>
     </div>

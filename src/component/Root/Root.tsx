@@ -19,7 +19,7 @@ function Root() {
     }
   },[])
   return (
-    < >
+    <>
       <Navbar 
        darkmode={darkmode} 
        setDarkmode={setDarkmode}

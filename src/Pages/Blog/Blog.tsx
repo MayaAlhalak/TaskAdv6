@@ -65,6 +65,9 @@ useEffect(() => {
                     <Card
                     key={index}
                     id={item.id}
+                    flex1={false}
+                    flex2={false}
+                    width={false}
                     image={item.image}
                     date={item.date}
                     title = {item.title}
@@ -72,11 +75,7 @@ useEffect(() => {
                     btn1={item?.btn1}
                     btn2={item?.btn2}
                     btn3={item?.btn3}/>
-                  ))
-           
-                    
-                  
-                }
+                  ))}
         </div>
         <div className="md:w-[412px] lg:w-[778px]">
             {
@@ -90,6 +89,7 @@ useEffect(() => {
             <div>
             {alldate &&
                    <CardArtical
+                    id={alldate.id}
                     part1 ={alldate.part1}
                     part2 ={alldate.part2}
                     part3 ={alldate.part3}

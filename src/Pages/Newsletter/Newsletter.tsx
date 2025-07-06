@@ -19,20 +19,24 @@ function Newsletter() {
 };
   const { darkmode } = useOutletContext<ContextType>();
   return (
-    <section className={`${darkmode ? "dark" : ""} dark:bg-[#090D1F]`}>
+    <section className={`${darkmode ? "dark" : ""} dark:bg-[#090D1F] pt-[92px] md:pt-[152px] lg:pt-[120px] mb-0`}>
         <Form
             title= "Newlatters"
             text = "Stories and interviews"
             btn = "Subscribe"
     />
-      <div className='px-8 mb-5'>
+      <div className='px-8 '>
         <h3 className='text-2xl font-semibold text-[#1A1A1A] font-display mb-8'>Recent blog posts</h3>
         <div className='grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-x-4'>
             {
               Array.isArray(threeItem) &&
               threeItem.map((item , index) =>(
                 <Card
+                  key={index}
                   id={item.id}
+                  flex1={false}
+                  flex2={false}
+                  width={false}
                   image={item.image}
                   date={item.date}
                   title = {item.title}
