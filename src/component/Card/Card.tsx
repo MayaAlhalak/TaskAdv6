@@ -36,6 +36,7 @@ function Card({image , date ,title ,contentshort , flex1 , flex2 , width , btn1,
   id === 5 ? 'text-[#363F72] bg-[#F8F9FC]':
   id === 10 ? 'text-[#363F72] bg-[#F8F9FC]':
    id ==  6 ? 'text-[#3538CD] bg-[#EEF4FF]'  :
+   id ==  8 ? 'text-[#3538CD] bg-[#EEF4FF]'  :
    id ==  7 ? 'text-[#3538CD] bg-[#EEF4FF]'  :
    id ==  9 ? 'text-[#C11574] bg-[#FDF2FA]'  :
     '' ;
