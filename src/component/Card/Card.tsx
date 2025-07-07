@@ -12,9 +12,10 @@ import { useNavigate } from "react-router-dom";
   btn1:string;
   btn2:string;
   btn3:string;
+  extraClass ?: string;
 };
 
-function Card({image , date ,title ,contentshort , flex1 , flex2 , width , btn1, btn2 , btn3 , id } : Article) {
+function Card({image , date ,title ,contentshort , flex1 , flex2 , width , btn1, btn2 , btn3 , id ,extraClass } : Article) {
 
   const numberId1 = id === 1 ? 'text-[#6941C6] bg-[#F9F5FF] ' : 
    id === 4 ? 'text-[#6941C6] bg-[#F9F5FF] ' : 
@@ -48,7 +49,7 @@ const goToBlog = () =>{
   Navigate(`/blog/${id}`);
 }
     return (
-       <div className={` ${flex1 ? 'flex justify-between items-center md:flex-row flex-col ' : ''} ${width ? 'gap-x-6 w-[326px] md:w-[770px] lg:w-[592px]  ' : 'gap-x-8 '} ${flex2 ? 'lg:flex-row! md:flex-col! ' : ''}`} >
+       <div className={` ${flex1 ? 'flex justify-between items-center md:flex-row flex-col ' : ''} ${width ? 'gap-x-6 w-[326px] md:w-[770px] lg:w-[592px]  ' : 'gap-x-8 '} ${flex2 ? 'lg:flex-row! md:flex-col! ' : ''}  ${extraClass}`} >
           <img src={image} alt=""  className={`w-[100%] lg:mb-8 mb-6  ${width ? '' : 'h-[200px] md:h-[188px] lg:h-[246px]'}`}/>
           <div className=" lg:flex-row flex-col">
               <p className="text-[#6941C6] font-display text-[14px] font-semibold mb-3 leading-5">{date}</p>

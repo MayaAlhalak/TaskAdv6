@@ -1,3 +1,6 @@
+
+import { Link, useLocation } from "react-router-dom";
+
 interface Link  {
         name : string,
         path : string
@@ -24,9 +27,11 @@ function Navbar( {darkmode , setDarkmode ,openNav , setopenNav  }: NavbarProps) 
         }, 
         {
             name : "Newsletter",
-            path : '/TaskAdv6/newsletter'
+            path : '/newsletter'
         }, 
     ]
+   
+    const location = useLocation();
     const isopenNav= ()=>{
         setopenNav(!openNav)
     }
@@ -56,7 +61,12 @@ function Navbar( {darkmode , setDarkmode ,openNav , setopenNav  }: NavbarProps) 
             <ul >
                 {
                     Links.map((item , index) => (
-                        <li className="text-center text-lg font-normal leading-[24px] dark:text-white mb-5" key={index} ><a href={item.path}>{item.name}</a></li>
+                        <li className="text-center text-lg font-normal leading-[24px] dark:text-white mb-5" key={index} >
+                            <Link to={item.path}
+                            onClick={closeNav}
+                            className={` ${location.pathname === item.path ? ' border-b border-[#090D1F] dark:border-white' : ''}`}
+                            >{item.name}</Link>
+                        </li>
                     ))
                 }
             </ul>
@@ -75,7 +85,10 @@ function Navbar( {darkmode , setDarkmode ,openNav , setopenNav  }: NavbarProps) 
             <ul className=" sm:flex  justify-between items-center gap-x-[22px] ">
                     {
                         Links.map((item , index) => (
-                            <li className=" font-normal leading-[24px] text-lg lg:text-xl color-[#1A1A1A] dark:text-white " key={index} ><a href={item.path}>{item.name}</a></li>
+                            <li className=" font-normal leading-[24px] text-lg lg:text-xl color-[#1A1A1A] dark:text-white " key={index} >
+                                <Link to={item.path}
+                                 className={` ${location.pathname === item.path ? ' border-b border-[#090D1F] dark:border-white' : ''}`}>{item.name}
+                                </Link></li>
                         ))
                     }
             </ul>

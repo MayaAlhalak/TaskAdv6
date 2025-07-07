@@ -58,24 +58,33 @@ useEffect(() => {
 
     return (
    <section className={`${darkmode ? "dark" : ""} dark:bg-[#090D1F] bg-white ${openNav ? 'absolute z-[-1] ' : ''}  `}>pt-
-    <section className="flex flex-col-reverse md:flex-row justify-between px-[31px] md:px-8 lg:px-36 5 md:pt-[23px] lg:pt-[30px] gap-x-8 md:gap-x-4 mb-10  md:mb-8">
-        <div className="md:w-[342px] ">
+    <section className="flex flex-col-reverse md:flex-row justify-between px-[31px] md:px-8 lg:px-36 5 md:pt-[23px] lg:pt-[30px] gap-x-8 md:gap-x-4 ">
+        <div className="md:w-[342px] mt-8">
+          <h3 className="text-2xl font-display font-semibold leading-8 text-[#1A1A1A] mb-8">Recent blog posts</h3>
               {Array.isArray(slicenineitem) && 
-                  slicenineitem.map((item , index) => (
-                    <Card
-                    key={index}
-                    id={item.id}
-                    flex1={false}
-                    flex2={false}
-                    width={false}
-                    image={item.image}
-                    date={item.date}
-                    title = {item.title}
-                    contentshort = {item.contentshort}
-                    btn1={item?.btn1}
-                    btn2={item?.btn2}
-                    btn3={item?.btn3}/>
-                  ))}
+                  slicenineitem.map((item , index) => {
+                    const isLast = index === slicenineitem.length - 1;
+                    const marginClass = isLast ? "mb-[72px] md:mb-0" : "mb-8";
+                    return (
+                      <div className={marginClass}>
+                        <Card
+                            key={index}
+                            id={item.id}
+                            flex1={false}
+                            flex2={false}
+                            width={false}
+                            image={item.image}
+                            date={item.date}
+                            title = {item.title}
+                            contentshort = {item.contentshort}
+                            btn1={item?.btn1}
+                            btn2={item?.btn2}
+                            btn3={item?.btn3}/>
+                      </div> 
+                    )
+                  }
+                   
+                  )}
         </div>
         <div className="md:w-[412px] lg:w-[778px]">
             {
@@ -139,11 +148,10 @@ useEffect(() => {
             </div>
             {
             artical && 
-            <div className="mt-6">
+            <div className="mt-6 mb-8">
               <button className={`${numberId1} font-medium text-[14px] font-display leading-5 rounded-[16px] py-0.5 px-2.5` }>{artical?.btn1}</button>
               <button className={`${numberId2} font-medium text-[14px] font-display leading-5 rounded-[16px] py-0.5 px-2.5 mx-2`}>{artical?.btn2}</button>
               <button className={`${numberId3} font-medium text-[14px] font-display leading-5 rounded-[16px] py-0.5 px-2.5`}>{artical?.btn3}</button>
-
             </div>
             }
         </div>

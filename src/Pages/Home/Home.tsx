@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Card from "../../component/Card/Card";
 import { useEffect, useState } from "react";
 import { CHOSEFOUR, choseOne, setPage, TWOITEM } from "../../redux/Slice";
-  type ContextType = {
+ export type ContextType = {
   darkmode: boolean;
   openNav: boolean;
 };
@@ -21,7 +21,7 @@ interface item {
 function Home() 
 {
 const { darkmode } = useOutletContext<ContextType>();
- const { openNav } = useOutletContext<ContextType>();
+const { openNav } = useOutletContext<ContextType>();
 const { articles, currentPage, pageSize } = useSelector((state: any) => state.articles);
 const dispatch = useDispatch();
 const startIndex = (currentPage - 1) * pageSize;
@@ -55,22 +55,24 @@ return(
     </div>
     <div className="px-8 lg:px-28">
         <h3 className="font-display text-2xl font-semibold text-[#1A1A1A]  leading-8  mt-[50px] md:mt-[60px] lg:mt-[30px] mb-8 dark:text-white">Recent blog posts</h3>
-        <div className="flex lg:justify-between justify-center flex-wrap lg:flex-row flex-col  ">
-          {
-          mainArticle &&
-            <Card 
-              id={mainArticle.id}
-              width = {true}
-              flex1={false}
-              flex2 = {false}
-              image={mainArticle.image}
-              date={mainArticle.date}
-              title = {mainArticle.title}
-              contentshort = {mainArticle.contentshort}
-              btn1={mainArticle?.btn1}
-              btn2={mainArticle?.btn2}
-              btn3={mainArticle?.btn3}/>
-        }
+        <div className="flex lg:justify-between justify-center flex-wrap lg:flex-row flex-col mb-[30px] lg:mb-0 ">
+            <div className="mb-8 lg:mb-[30px]">
+                  {
+              mainArticle &&
+                <Card 
+                  id={mainArticle.id}
+                  width = {true}
+                  flex1={false}
+                  flex2 = {false}
+                  image={mainArticle.image}
+                  date={mainArticle.date}
+                  title = {mainArticle.title}
+                  contentshort = {mainArticle.contentshort}
+                  btn1={mainArticle?.btn1}
+                  btn2={mainArticle?.btn2}
+                  btn3={mainArticle?.btn3}/>
+            }
+            </div>
             <div className="flex flex-col ">
               {Array.isArray(twoArticle) &&
                 twoArticle.map((item , index) => (
@@ -87,12 +89,13 @@ return(
                       btn1={item?.btn1}
                       btn2={item?.btn2}
                       btn3={item?.btn3}
+                      extraClass={index === 0 ? "mb-8 lg:mb-0 md:mb-0" : ""}
               />
                 ))
           }
             </div>
         </div>
-        <div className="pt-7">
+        <div className="pt-[30px]">
           {
           fourArticle &&
             <Card 
@@ -111,7 +114,7 @@ return(
         }
         </div>
       <div>
-          <h3 className="font-display text-2xl font-semibold text-[#1A1A1A]  leading-8  mt-[50px] md:mt-[60px] lg:mt-[30px] mb-8 dark:text-white">Recent blog posts</h3>
+          <h3 className="font-display text-2xl font-semibold text-[#1A1A1A]  leading-8  mt-[60px] md:mt-[30px] lg:mt-[28px] mb-8 dark:text-white">Recent blog posts</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 mb-[30px] ">
             {paginatedArticles.map((item :item , index) => (
               <Card
