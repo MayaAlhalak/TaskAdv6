@@ -55,7 +55,7 @@ const goToBlog = () =>{
               <p className="text-[#6941C6] font-display text-[14px] font-semibold mb-3 leading-5">{date}</p>
               <div  className="flex justify-between items-center">
                 <h4 className={`font-display  mb-3 text-2xl font-semibold leading-8 ${flex1 ? 'text-lg' : ''} dark:text-[#FFFFFF] `}>{title}</h4>
-                <button onClick={goToBlog}><img src="/TaskAdv6/assets/image/home/arrow-up-right.svg" className="dark:invert " alt="" /></button>
+                <button onClick={goToBlog}><img src="/assets/image/home/arrow-up-right.svg" className="dark:invert " alt="" /></button>
               </div>
               <p className="mb-6 font-display text-base font-semibold text-[#667085] dark:text-[#C0C5D0]">{contentshort}</p>
               <div>

@@ -7,6 +7,6 @@ export default defineConfig({
      tailwindcss(),
 
   ],
-   base: "/TaskAdv6/",
+
    
 })

@@ -139,7 +139,7 @@ return(
               onClick={() => dispatch(setPage(currentPage - 1))}
               disabled={currentPage === 1}
               className="flex items-center justify-center gap-x-2 text-[#667085] dark:text-[#EFEFEF] text-[14px] font-medium leading-5">
-              <img src="/TaskAdv6/assets/image/home/Icon (1).svg" className="dark:invert dark:brightness-0 dark:contrast-200" alt="" /> Previous
+              <img src="/assets/image/home/Icon (1).svg" className="dark:invert dark:brightness-0 dark:contrast-200" alt="" /> Previous
             </button>
             <div className="flex items-center justify-center gap-0.5">
           {Array.from({ length: totalPages }, (_, idx) => {
@@ -163,7 +163,7 @@ return(
               <button
                 key={page}
                 onClick={() => dispatch(setPage(page))}
-              className={`px-[15.5px] py-2.5 text-sm font-medium rounded-lg
+                className={`px-[15.5px] py-2.5 text-sm font-medium rounded-lg
                   ${currentPage === page
                     ? 'bg-[#F9F5FF] text-[#7F56D9] dark:bg-white dark:text-[#112211]'
                     : 'text-[#667085] dark:text-[#EFEFEF]'
@@ -179,7 +179,7 @@ return(
               disabled={currentPage === totalPages}
               className=" flex items-center justify-center gap-x-2 text-[#667085] dark:text-[#EFEFEF] text-[14px] font-medium leading-5"
             >
-              Next <img src="/TaskAdv6/assets/image/home/Icon.svg" className="dark:invert dark:brightness-0 dark:contrast-200" alt="" />
+              Next <img src="/assets/image/home/Icon.svg" className="dark:invert dark:brightness-0 dark:contrast-200" alt="" />
             </button>
           </div>
   </div>
